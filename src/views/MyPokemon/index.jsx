@@ -5,7 +5,7 @@ import { FlexBetween } from '../../styles/MyPokemon'
 
 export default function MyPokemon() {
     const style = myPokemonStyle()
-    const MyPokemonList = localStorage.getItem("mypokemon")
+    const MyPokemonList = localStorage.getItem("mypokemon") || "[]"
     let parsedPokemon = JSON.parse(MyPokemonList)
     const [pokemonList, setpokemonList] = useState(parsedPokemon)
     const handleRemove = (name) => {
