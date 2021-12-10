@@ -22,28 +22,31 @@ export default function MyPokemon() {
                 </NavLink>
             </FlexBetween>
             <MainContent>
+                <div className="row">
                 {
                     pokemonList.length > 0 ? pokemonList && pokemonList.map((index, i) => {
                         return (
-                            <MyPokemonCard key={i}>
-                                <div style={{margin: 'auto 0'}}>
-                                    <p style={{textTransform: 'capitalize', marginBottom: '5px'}}>{index.name}</p>
-                                    <PokemonNickname style={{textTransform: 'capitalize'}}>{index.nickname}</PokemonNickname>
-                                    {index.types.map((index) => {
-                                        return(
-                                            <PokemonTypes>
-                                                {index.type.name}
-                                            </PokemonTypes>
-                                        )
-                                    })}
-                                </div>
-                                <img src={index.image} alt="" />
-                                <div>
-                                    <DeleteButton onClick={() => handleRemove(index.nickname)}>
-                                        <i class="far fa-trash-alt"></i>
-                                    </DeleteButton>
-                                </div>
-                            </MyPokemonCard>
+                            <div className="col-md-4">
+                                <MyPokemonCard key={i}>
+                                    <div style={{margin: 'auto 0'}}>
+                                        <p style={{textTransform: 'capitalize', marginBottom: '5px'}}>{index.name}</p>
+                                        <PokemonNickname style={{textTransform: 'capitalize'}}>{index.nickname}</PokemonNickname>
+                                        {index.types.map((index) => {
+                                            return(
+                                                <PokemonTypes>
+                                                    {index.type.name}
+                                                </PokemonTypes>
+                                            )
+                                        })}
+                                    </div>
+                                    <img src={index.image} alt="" />
+                                    <div>
+                                        <DeleteButton onClick={() => handleRemove(index.nickname)}>
+                                            <i class="far fa-trash-alt"></i>
+                                        </DeleteButton>
+                                    </div>
+                                </MyPokemonCard>
+                            </div>
                         )
                     }) : 
                     <div className={style.emptyContent}>
@@ -51,6 +54,7 @@ export default function MyPokemon() {
                         <p style={{marginTop: '10px'}}>No pokemon saved</p>
                     </div>
                 }
+                </div>
             </MainContent>
         </Container>
     )
