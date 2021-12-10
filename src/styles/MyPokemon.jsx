@@ -68,3 +68,11 @@ export const PokemonNickname = styled.p`
     color: gray;
     font-size: 12px;
 `
+export const DeleteButton = styled.button`
+    background-color: red;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+`

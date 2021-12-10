@@ -131,7 +131,7 @@ export default function PokemonIndex() {
                         return (
                             <NavLink 
                                 style={{textDecoration: 'none'}} 
-                                className="col-4" 
+                                className="col-4 col-md-2" 
                                 to={{
                                         pathname:`/pokemon-detail/${index.name}`,
                                         query:{pokemon_name: "pokemon_name"}

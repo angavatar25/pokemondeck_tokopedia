@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Container, MainContent, MyPokemonCard, myPokemonStyle, PokemonNickname, PokemonTypes } from '../../styles/MyPokemon'
+import { Container, DeleteButton, MainContent, MyPokemonCard, myPokemonStyle, PokemonNickname, PokemonTypes } from '../../styles/MyPokemon'
 import { FlexBetween } from '../../styles/MyPokemon'
 
 export default function MyPokemon() {
@@ -39,9 +39,9 @@ export default function MyPokemon() {
                                 </div>
                                 <img src={index.image} alt="" />
                                 <div>
-                                    <button onClick={() => handleRemove(index.nickname)}>
+                                    <DeleteButton onClick={() => handleRemove(index.nickname)}>
                                         <i class="far fa-trash-alt"></i>
-                                    </button>
+                                    </DeleteButton>
                                 </div>
                             </MyPokemonCard>
                         )

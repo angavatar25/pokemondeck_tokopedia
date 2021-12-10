@@ -3,6 +3,7 @@ import PokemonIndex from './views/PokemonIndex';
 import {createUseStyles} from 'react-jss';
 import PokemonDetail from './views/PokemonDetail';
 import MyPokemon from './views/MyPokemon';
+import styled from '@emotion/styled'
 
 const useStyles = createUseStyles({
     mainView: {
@@ -12,17 +13,24 @@ const useStyles = createUseStyles({
     }
 })
 
+const ContainerRouter = styled.div`
+    max-width: 500px;
+    @media(min-width: 768px) {
+      max-width: 100%;
+    }
+`
+
 function App() {
     const style = useStyles()
     return (
       <BrowserRouter>
-            <div className={style.mainView}>
+            <ContainerRouter>
               <Switch>
                   <Route exact path = "/" render={(props) => <PokemonIndex{...props}/>}></Route>
                   <Route path = "/pokemon-detail/:pokemon_name" component={PokemonDetail}></Route>
                   <Route path = "/my-pokemon" component={MyPokemon}></Route>                  
               </Switch>
-            </div>
+            </ContainerRouter>
       </BrowserRouter>
     )
 }
