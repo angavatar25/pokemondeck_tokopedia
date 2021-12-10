@@ -88,7 +88,7 @@ export const PokemonMoves = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex: 0 1 auto;
-    height: 40vh;
+    height: 100%;
     overflow-y: auto;
 `
 

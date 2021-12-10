@@ -63,7 +63,6 @@ export default function PokemonIndex() {
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log(res.data.pokemons)
                 setMeta(res.data.pokemons)
                 setpokemonList(res.data.pokemons.results)
             })
